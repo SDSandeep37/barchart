@@ -1,0 +1,200 @@
+.login {
+    display: flex;
+    // height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    .login__errorMessage {
+        color: red;
+        padding: 10px;
+        padding-left: 0;
+        display: none;
+    }
+
+    .login__wrapper {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #f7f7f7;
+        margin: 10px;
+
+        border-radius: 5px;
+        gap: 2px;
+
+        @media screen and (max-width : 768px) {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+    }
+
+    .login__wrapper>* {
+        flex: 1 1 300px;
+
+    }
+
+    // @media screen and  (min-width : 768px ) {
+    //     .login__left{
+    //         flex: 1;
+    //     }
+    //     .login__right{
+    //         flex: 1;
+    //     }
+    // }
+    // @media screen and  (max-width : 768px ) {
+    //     .login__left{
+    //         flex-basis: 100vw;
+    //     }
+    //     .login__right{
+    //         flex-basis: 100vw;
+    //     }
+    //     .login__wrapper{
+    //         flex-direction: column;
+    //     }
+    // }
+    .login__left {
+        position: relative;
+        background: url("../../img/background.png") no-repeat;
+        background-size: 43vw 85vh;
+
+        // height: 100vh;
+
+        @media screen and (max-width : 622px) {
+            height: 100%;
+            background-size: 100vw 80vh;
+        }
+
+        .login__details {
+            flex-direction: column;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: absolute;
+            bottom: -30%;
+            width: 42%;
+            left: 33%;
+
+            @media screen and (max-width : 488px) {
+                left: 26%;
+            }
+
+        }
+
+        .login__desc {
+            font-size: 10px;
+            margin-left: 4vw;
+            color: #566673;
+        }
+
+        .login__heading {
+            font-size: 14px;
+            color: #5b5b7f;
+        }
+    }
+
+    .login__right {
+        background-color: white;
+        // flex-basis: 50%;
+        height: 100vh;
+
+
+        .login__form {
+            width: 100%;
+            padding: 30px;
+            margin-left: 20px;
+            width: 76%;
+
+            @media screen and (max-width : 488px) {
+                margin-left: 0px;
+            }
+        }
+
+        .login__label {
+            font-size: 14px;
+            color: #8a9090;
+        }
+
+        .login--label {
+            font-size: 12px;
+            margin-left: 4px;
+            color: rgb(45, 40, 40);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .login__title {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .login__inputGroup {
+            display: block;
+        }
+
+        .login__input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: solid 1px #e8ebee;
+            border-radius: 2px;
+        }
+
+        .login--input {
+            width: 40%;
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .login__check {
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .login__check:checked+.login--label::before {
+            content: "\002714";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(21, 88, 181);
+        }
+
+        .login--label::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            margin-right: 4px;
+            border: solid 1px rgb(21, 88, 181);
+            border-radius: 5px;
+        }
+
+        .login__button {
+            color: white;
+            margin-top: 40px;
+            padding: 10px 31px;
+            background-color: #008bff;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+
+            @media screen and (max-width : 488px) {
+                margin-left: 22%;
+            }
+        }
+
+    }
+
+    .login__error {
+        font-size: 12px;
+        color: red;
+        padding: 5px;
+        padding-left: 0px;
+        display: none;
+    }
+
+    .login__input:invalid[focused="true"]~.login__error {
+        display: block;
+    }
+}
